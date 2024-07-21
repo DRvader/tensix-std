@@ -1,0 +1,11 @@
+[package]
+name = "runtime"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+sync-start = []
+
+[dependencies]
+runtime-macros = {path = "macros"}
+paste = "1.0.15"

@@ -1,0 +1,25 @@
+[package]
+name = "tensix-std"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+sync-start = ["runtime/sync-start"]
+default = ["sync-start"]
+
+[dependencies]
+runtime = {path = "crates/runtime"}
+gs_assembly = {path = "crates/gs_assembly"}
+wh_assembly = {path = "crates/wh_assembly"}
+bh_assembly = {path = "crates/bh_assembly"}
+
+[lints.rust]
+unexpected_cfgs = {level = "warn", check-cfg = ['cfg(target_env, values("grayskull", "wormhole", "blackhole"))']}
+
+[workspace]
+members = [
+	"crates/gs_assembly",
+	"crates/wh_assembly",
+	"crates/bh_assembly",
+	"crates/runtime",
+]
