@@ -93,9 +93,21 @@ ___ncrisc_stack_top = .;
 
 . = ORIGIN(SMALL_LDM);
 . =  ALIGN(16);
-___trisc_stack_bottom = .;
+___trisc0_stack_bottom = .;
 . += __trisc_stack_size;
-___trisc_stack_top = .;
+___trisc0_stack_top = .;
+
+. = ORIGIN(SMALL_LDM);
+. =  ALIGN(16);
+___trisc1_stack_bottom = .;
+. += __trisc_stack_size;
+___trisc1_stack_top = .;
+
+. = ORIGIN(SMALL_LDM);
+. =  ALIGN(16);
+___trisc2_stack_bottom = .;
+. += __trisc_stack_size;
+___trisc2_stack_top = .;
 
 PROVIDE(__L1_END = ORIGIN(L1) + LENGTH(L1));
 PROVIDE(__NCRISC_LDM_END = ORIGIN(SMALL_LDM) + LENGTH(SMALL_LDM));
